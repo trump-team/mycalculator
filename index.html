@@ -571,7 +571,7 @@
             box-shadow: 0 0 10px rgba(178, 34, 52, 0.1);
         }
 
-        /* Trump Family Members - UPDATED: Removed pictures */
+        /* Trump Family Members - UPDATED: Fixed pictures */
         .trump-family {
             padding: 80px 0;
             background: linear-gradient(135deg, #3C3B6E 0%, #002868 100%);
@@ -622,25 +622,34 @@
         .member-portrait {
             width: 180px;
             height: 180px;
-            background: var(--gradient-usa);
-            color: var(--usa-white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 48px;
-            font-weight: 800;
             margin: 0 auto 20px;
             border: 8px solid var(--usa-white);
             box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
             overflow: hidden;
             position: relative;
             transition: var(--transition);
+            background: var(--gradient-usa);
+        }
+
+        .member-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
         }
 
         .member-portrait:hover {
             transform: scale(1.05);
             box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+        }
+
+        .member-portrait:hover img {
+            transform: scale(1.1);
         }
 
         .member h3 {
@@ -886,27 +895,6 @@
             opacity: 0.3;
         }
 
-        /* Portrait Frame Effect */
-        .portrait-frame {
-            position: relative;
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 20px;
-        }
-
-        .portrait-frame::before {
-            content: '';
-            position: absolute;
-            top: -8px;
-            left: -8px;
-            right: -8px;
-            bottom: -8px;
-            border: 2px solid var(--usa-red);
-            border-radius: 50%;
-            z-index: 1;
-            pointer-events: none;
-        }
-
         /* Responsive Design */
         @media (max-width: 1400px) {
             .container {
@@ -986,7 +974,6 @@
             .member-portrait {
                 width: 150px;
                 height: 150px;
-                font-size: 40px;
             }
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
@@ -1032,7 +1019,6 @@
             .member-portrait {
                 width: 130px;
                 height: 130px;
-                font-size: 36px;
             }
         }
 
@@ -1066,7 +1052,6 @@
             .member-portrait {
                 width: 120px;
                 height: 120px;
-                font-size: 32px;
             }
         }
 
@@ -1226,7 +1211,7 @@
         </div>
     </section>
 
-    <!-- Trump Family Section - UPDATED: Removed pictures -->
+    <!-- Trump Family Section - UPDATED: All three show properly now -->
     <section class="trump-family" id="family">
         <div class="container">
             <div class="section-header">
@@ -1237,21 +1222,27 @@
             <div class="members">
                 <div class="member">
                     <div class="member-portrait">
-                        👨‍💼
+                        <!-- Donald J. Trump - Updated with better image URL -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/400px-Donald_Trump_official_portrait.jpg" 
+                             alt="Donald J. Trump - 45th President of the United States"
+                             onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIHJ4PSI5MCIgZmlsbD0idXJsKCNncmFkKSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjM2Ij5EVFJVUzwvdGV4dD48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzQzNCNkU7Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojQjIyMjM0OyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjwvc3ZnPg=='">
                     </div>
                     <h3>Donald J. Trump</h3>
                     <p>45th President of the United States, businessman, and founder of The Trump Organization.</p>
                 </div>
                 <div class="member">
                     <div class="member-portrait">
-                        👸
+                        <!-- Melania Trump - Updated with better image URL -->
+                       <img src="./melania.jpg" alt="">
                     </div>
                     <h3>Melania Trump</h3>
                     <p>First Lady of the United States (2017-2021), former model, and founder of Be Best initiative.</p>
                 </div>
                 <div class="member">
                     <div class="member-portrait">
-                        💼
+                        <!-- Ivanka Trump - Updated with better image URL -->
+                        
+                             <img src="./ivanka.webp" alt="">
                     </div>
                     <h3>Ivanka Trump</h3>
                     <p>Former Advisor to the President, businesswoman, and founder of Ivanka Trump fashion brand.</p>
@@ -1317,7 +1308,7 @@
                 <h2>Join The MAGA Movement</h2>
                 <p>Be part of us Connect with supporters and stay updated on the latest news, events, giveaways, and initiatives from Donald J. Trump. nation Be part of the movement </p>
                 <!-- Changed button to navigate to connect.html -->
-                <a href="connects.html" class="btn-solid"> click to join team </a>
+                <a href="connect.html" class="btn-solid">Connect with Supporters</a>
             </div>
         </div>
     </section>
@@ -1578,5 +1569,3 @@
     </script>
 </body>
 </html>
-
-
